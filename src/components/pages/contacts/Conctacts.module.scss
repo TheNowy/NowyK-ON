@@ -1,0 +1,226 @@
+* {
+  transition: 0.5s;
+  .page_wrapper {
+    width: 100%;
+    max-width: 2000px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: 0.5s;
+
+    .container {
+      .home_content {
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #140d25;
+        background-size: cover;
+        background-position: center;
+
+        min-height: 130vh;
+
+        padding: 5rem 7rem;
+
+        &.active {
+          background-color: #fff;
+        }
+        .gif_image {
+          margin-right: 50px;
+          border-radius: 13px;
+          min-width: 600px;
+          max-width: 2000px;
+          padding: 18.4rem 13rem;
+          border: solid 1px #0d1117;
+          background-position: center;
+          background: linear-gradient(
+              rgba(0, 0, 0, 0.612),
+              rgba(0, 0, 0, 0.612)
+            ),
+            url("https://i.playground.ru/p/QZMm2UVDHE5cHkqeJQ1mfw.png");
+          background-repeat: no-repeat;
+          background-size: cover;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          overflow: hidden;
+          transition: 1s;
+
+          &:hover {
+            transition: 1s;
+            background: linear-gradient(
+                rgba(0, 0, 0, 0.612),
+                rgba(0, 0, 0, 0.612)
+              ),
+              url("https://thumb.cloud.mail.ru/weblink/thumb/xw1/8iDx/8C3EuPBGg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+          }
+
+          .h1 {
+            color: white;
+          }
+        }
+
+        .form {
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+
+          min-width: 600px;
+          max-width: 2000px;
+
+          padding: 2rem;
+
+          background: #000000;
+          border: solid 1px rgb(189, 189, 189);
+          border-radius: 13px;
+
+          gap: 3rem;
+
+          &.active {
+            background-color: #fff;
+          }
+
+          .label {
+            color: rgb(255, 255, 255);
+            width: 100%;
+            margin-bottom: 12px;
+            font-weight: 100;
+            font-family: sans-serif;
+
+            &.active {
+              color: black;
+            }
+            .input,
+            .message {
+              border-radius: 9px;
+              width: 100%;
+              border: none;
+
+              padding: 1rem 1.5rem;
+              background-color: #ffffff08;
+              color: rgb(255, 255, 255);
+              border: 1px solid rgb(189, 189, 189);
+
+              &.active {
+                color: black;
+              }
+
+              &:focus {
+                outline: 1px solid rgb(255, 255, 255);
+              }
+            }
+          }
+          .message {
+            max-width: 100%;
+            min-width: 100%;
+            font-family: "Rubik", sans-serif;
+            min-height: 174px;
+            max-height: 300px;
+            padding: 1rem;
+          }
+          .button {
+            font-size: 16px;
+            font-weight: 600;
+            padding: 1rem;
+            border: none;
+            background: #1e2631;
+            color: white;
+            border-radius: 13px;
+            cursor: pointer;
+
+            &:hover {
+              background: #0d1117;
+              color: #838080;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 1285px) {
+    .page_wrapper {
+      .container {
+        .home_content {
+          display: flex;
+          flex-direction: column;
+          padding: 8rem 3rem;
+          .gif_image {
+            display: flex;
+            margin-right: 0;
+            margin-bottom: 20px;
+            border-radius: 13px;
+            min-width: 400px;
+            max-width: 400px;
+            padding: 8rem 6rem;
+          }
+          .form {
+            min-width: 400px;
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 500px) {
+    .page_wrapper {
+      .container {
+        .home_content {
+          background-color: rgb(255, 255, 255);
+          &.active {
+            background-color: none;
+          }
+          .gif_image {
+            background-image: url("https://www.seti.org/sites/default/files/2020-10/earth-view-from-moon-perspective-footprints-1400px.jpg");
+            &.active {
+              background-image: url("https://www.seti.org/sites/default/files/2020-10/earth-view-from-moon-perspective-footprints-1400px.jpg");
+            }
+
+            .h1 {
+              color: #e46300;
+
+              &.active {
+                color: #e46300;
+              }
+            }
+          }
+
+          .form {
+            background-color: #fff;
+            &.active {
+              background-color: #fff;
+            }
+            .label {
+              color: rgb(0, 0, 0);
+              &.active {
+                color: black;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 414px) {
+    .page_wrapper {
+      .container {
+        .home_content {
+          padding: 8rem 3rem;
+          .gif_image {
+            min-width: 300px;
+            max-width: 200px;
+            padding: 2rem 3.5rem;
+
+            .h1 {
+              font-size: 20px;
+            }
+          }
+          .form {
+            min-width: 300px;
+          }
+        }
+      }
+    }
+  }
+}

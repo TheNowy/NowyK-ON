@@ -1,0 +1,171 @@
+@import url(https://fonts.googleapis.com/css?family=Rubik:200,300,400,500,600,700,800,900);
+
+// .beta {
+//   margin-bottom: 3rem;
+//   position: fixed;
+//   left: 0;
+//   top: 0;
+
+//   width: 100%;
+//   padding: 0px 10%;
+
+//   background-color: rgb(255, 0, 0);
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   z-index: 10000000;
+
+//   h1 {
+//     color: white;
+//     font-size: 15px;
+//     font-family: sans-serif;
+//     font-weight: 100;
+//   }
+// }
+
+.header {
+  position: fixed;
+  left: 0;
+  top: 10px;
+  width: 100%;
+  padding: 20px 10%;
+
+  background-color: rgba(255, 255, 255, 0);
+  display: flex;
+  justify-content: space-between;
+  border-bottom: solid 1px rgb(255, 255, 255);
+  align-items: center;
+  z-index: 1000000;
+  transition: 0.3s;
+  backdrop-filter: blur(5px);
+
+  &.active {
+    top: -61px;
+
+    &:hover {
+      top: 0;
+    }
+  }
+
+  .logo {
+    color: white;
+    font-weight: 700;
+    font-size: 25px;
+    padding: 5px 10px;
+    font-family: "Rubik", sans-serif;
+    text-transform: uppercase;
+    
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.412);
+      border-radius: 7px;
+    }
+
+    span {
+      color: blue;
+    }
+  }
+
+  .header_wrap {
+    display: flex;
+    .link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      width: 5rem;
+      padding: 10px 15px;
+      margin-left: 20px;
+      color: rgb(255, 255, 255);
+      border-radius: 5px;
+      font-family: "Rubik", sans-serif;
+      font-weight: 400;
+      transition: 0.3s;
+      background-color: rgba(209, 209, 209, 0.221);
+
+      &.activeLinks {
+        color: white;
+      }
+
+      &:hover {
+        color: gold;
+      }
+    }
+    .burger_menu {
+      display: none;
+    }
+  }
+}
+@media (max-width: 1015px) {
+  .header {
+    padding: 20px 14%;
+    &.active {
+      padding: 20px 7% 20px 7%;
+      li {
+        display: none;
+      }
+    }
+    .header_wrap {
+      .gitlink {
+        display: none;
+      }
+      .link {
+        display: none;
+      }
+      .resume {
+        display: none;
+      }
+      .burger_menu {
+        display: block;
+        width: 40px;
+        height: 30px;
+
+        span {
+          display: block;
+          width: 40px;
+          height: 7px;
+          margin: 6px auto;
+          background-color: #4d01ff;
+          border-radius: 12px;
+          transition: 0.2s;
+
+          &:last-child {
+            width: 30px;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 500px) {
+  .header {
+    width: 100%;
+    padding: 20px 10%;
+
+    background-color: rgba(255, 255, 255, 0);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: none;
+
+    .logo {
+      color: rgb(0, 0, 0);
+      font-weight: 700;
+      font-size: 25px;
+      padding: 5px 10px;
+      font-family: "Rubik", sans-serif;
+      text-transform: uppercase;
+
+      &.activeLinks {
+        color: rgb(0, 0, 0);
+      }
+    }
+
+    &.active {
+      width: 100%;
+      background-color: rgb(255, 255, 255);
+      backdrop-filter: none;
+      padding: 20px 10%;
+      border-bottom: none;
+    }
+  }
+}
