@@ -51,12 +51,11 @@
           cursor: pointer;
 
           &:hover {
-            color: #838080;
-            background: -webkit-linear-gradient(
-              -70deg,
-              #050059 0%,
-              #a8a8a8 100%
-            );
+            padding: 1.4rem 3.4rem;
+            color: #ffffff;
+            text-shadow: 0 0 10px rgb(255, 255, 255);
+            background-image: url('https://i.pinimg.com/originals/5b/67/8d/5b678d522ccbc5bf423cbc2c18ce745c.gif');
+            background-size: cover;
           }
         }
       }

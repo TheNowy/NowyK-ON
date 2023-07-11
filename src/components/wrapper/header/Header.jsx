@@ -20,10 +20,8 @@ export const Header = () => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       if (currentScrollY > prevScrollY) {
-        // Скролл вниз
         setScrollDirection("down");
       } else {
-        // Скролл вверх
         setScrollDirection("up");
       }
 
