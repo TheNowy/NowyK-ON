@@ -27,6 +27,12 @@
         background-repeat: no-repeat;
         background-size: cover;
 
+        @media (max-width: 666px) {
+          .title {
+            
+          }
+        }
+
         .h1_main,
         .h3_main {
           font-family: "Rubik" sans-serif;
