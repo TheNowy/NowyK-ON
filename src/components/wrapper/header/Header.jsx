@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import DropDownMenu from "../../wrapper/header/DropDownMenu/DropDown";
+
+import SupportAgentIcon from '@mui/icons-material/SupportAgent';
+import LocalMallIcon from '@mui/icons-material/LocalMall';
+import LoginIcon from '@mui/icons-material/Login';
+
 import scss from "./Header.module.scss";
 
 export const Header = () => {
@@ -10,74 +15,77 @@ export const Header = () => {
   const [prevScrollY, setPrevScrollY] = useState(0);
 
   const activeLink = ({ isActive }) => {
-    return {
-      border: isActive ? "solid 1px white" : "none",
-      color: isActive ? "white" : "white",
-    };
+    return {};
   };
 
   useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      if (currentScrollY > prevScrollY) {
-        setScrollDirection("down");
-      } else {
-        setScrollDirection("up");
-      }
-
-      setPrevScrollY(currentScrollY);
-
-      if (currentScrollY >= 10 && scrollDirection === "down") {
+    const changeBackground = () => {
+      if (typeof window !== "undefined" && window.scrollY >= 10) {
         setHeaderScroll(true);
       } else {
         setHeaderScroll(false);
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    changeBackground();
+    -window.addEventListener("scroll", changeBackground);
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", changeBackground);
     };
-  }, [prevScrollY, scrollDirection]);
+  }, []);
 
   return (
     <nav className={scss.nav}>
       <header
         className={
           headerScroll ? `${scss.header} ${scss.active}` : `${scss.header}`
-        }
-      >
+        }>
         <NavLink to="/" className={scss.logo}>
-          Nowy
+          <img
+            className={
+              headerScroll ? `${scss.image_active} ${scss.active}` : `${scss.image_active}`
+            }
+            src="../../../../murasOrig.png"
+            alt=""
+          />
+          <img
+            src="../../../../muraswhite.png"
+            alt=""
+            className={
+              headerScroll ? `${scss.image} ${scss.active}` : `${scss.image}`
+            }
+          />
+          <h1
+            className={
+              headerScroll ? `${scss.h1} ${scss.active}` : `${scss.h1}`
+            }>
+            Muras
+          </h1>
         </NavLink>
         <div className={scss.header_wrap}>
           <NavLink
             to="/"
             className={
-              headerScroll
-                ? `${scss.link} ${scss.activeLinks}`
-                : `${scss.link}`
+              headerScroll ? `${scss.link} ${scss.activeLinks}` : `${scss.link}`
             }
-            style={activeLink}
-          >
-            Home
+            style={activeLink}>
+          <SupportAgentIcon/> Поддержка
           </NavLink>
           <NavLink
-            to="/contacts"
+            to="/"
             className={
-              headerScroll
-                ? `${scss.link} ${scss.activeLinks}`
-                : `${scss.link}`
+              headerScroll ? `${scss.link} ${scss.activeLinks}` : `${scss.link}`
             }
-            style={activeLink}
-          >
-            Contact
+            style={activeLink}>
+            <LocalMallIcon/> Купить
           </NavLink>
+          <NavLink to="/" className={scss.cabinet}>
+          <LoginIcon/>  Авторизация
+            </NavLink>
           <div
             className={scss.burger_menu}
-            onClick={() => setOpenProfile((prev) => !prev)}
-          >
+            onClick={() => setOpenProfile((prev) => !prev)}>
             <span></span>
             <span></span>
           </div>

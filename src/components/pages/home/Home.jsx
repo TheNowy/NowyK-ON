@@ -27,16 +27,13 @@ const Home = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Nowy - Page</title>
-      </Helmet>
       <div className={scss.page_wrapper}>
         <div className={scss.container}>
           <div className={scss.home_content}>
               <div className={scss.title}>
-                <h1 className={scss.h1_main}>Добро пожаловать в Nowy</h1>
+                {/* <h1 className={scss.h1_main}>Добро пожаловать в Nowy</h1>
                 <h3 className={scss.h3_main}>Лучший сайт по качестве и без рекламы</h3>
-                <NavLink to="/news"><button className={scss.button_main}>Смотреть</button></NavLink>
+                <NavLink to="/news"><button className={scss.button_main}>Смотреть</button></NavLink> */}
               </div>
           </div>
         </div>

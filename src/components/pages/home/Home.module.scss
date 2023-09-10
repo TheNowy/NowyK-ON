@@ -17,7 +17,7 @@
       .title {
         line-height: 70px;
         width: 100%;
-        padding: 40vh 0;
+        padding: 100vh 0;
 
         display: flex;
         justify-content: center;
@@ -27,11 +27,11 @@
         background-repeat: no-repeat;
         background-size: cover;
 
-        @media (max-width: 666px) {
-          .title {
+        // @media (max-width: 666px) {
+        //   .title {
             
-          }
-        }
+        //   }
+        // }
 
         .h1_main,
         .h3_main {

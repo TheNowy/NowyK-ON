@@ -26,38 +26,69 @@
 .header {
   position: fixed;
   left: 0;
-  top: 10px;
+  top: 0;
   width: 100%;
-  padding: 20px 10%;
+  padding: 10px 10%;
 
-  background-color: rgba(255, 255, 255, 0);
   display: flex;
   justify-content: space-between;
-  border-bottom: solid 1px rgb(255, 255, 255);
   align-items: center;
   z-index: 1000000;
   transition: 0.3s;
-  backdrop-filter: blur(5px);
 
   &.active {
-    top: -81px;
+    padding: 5px 10%;
+    background-color: #0f091b;
   }
 
   .logo {
-    color: white;
-    font-weight: 700;
-    font-size: 25px;
-    padding: 5px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
     font-family: "Rubik", sans-serif;
+    border-radius: 7px;
     text-transform: uppercase;
-    
+
+    .h1 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      padding: 0;
+      color: white;
+      font-weight: 700;
+      font-size: 30px;
+      &.active {
+        display: none;
+      }
+    }
+
     &:hover {
       background-color: rgba(255, 255, 255, 0.412);
-      border-radius: 7px;
     }
 
     span {
       color: blue;
+    }
+
+    .image {
+      width: 70px;
+      display: none;
+
+      &.active {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+    .image_active {
+      width: 80px;
+      display: flex;
+
+      &.active {
+        display: none;
+      }
     }
   }
 
@@ -68,23 +99,43 @@
       justify-content: center;
       align-items: center;
 
-      width: 5rem;
-      padding: 10px 15px;
-      margin-left: 20px;
+      width: 100%;
+      padding: 10px 0;
       color: rgb(255, 255, 255);
       border-radius: 5px;
       font-family: "Rubik", sans-serif;
       font-weight: 400;
-      transition: 0.3s;
-      background-color: rgba(209, 209, 209, 0.221);
+      transition: .8s;
+
+      &:hover {
+        color: rgb(211, 211, 211);
+      }
 
       &.activeLinks {
         color: white;
       }
+    }
+    .cabinet {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      padding: 10px 25px;
+      border-radius: 14pt;
+      color: rgb(255, 255, 255);
+      position: relative;
+      background: linear-gradient(330deg, #01e9bd 0%, #007cde 100%);
+      overflow: hidden;
+      transition: all 0.25s linear 0s;
+      border-style: none;
 
       &:hover {
-        color: gold;
+        color: rgb(211, 211, 211);
       }
+    }
+    svg {
+      font-size: 21px;
+      margin-right: 5px;
     }
     .burger_menu {
       display: none;
